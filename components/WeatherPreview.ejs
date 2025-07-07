@@ -1,0 +1,15 @@
+<div class="preview">
+  <h2 class="preview__title">
+    <%- include('../components/StatusBadge', { active: weather.success }) %>
+    Weather Status
+  </h2>
+
+  <div class="preview__toggle">
+    <input type="checkbox" id="weather-toggle" />
+    <label for="weather-toggle">Show raw data</label>
+  </div>
+
+  <code class="preview__content">
+    <pre><%= JSON.stringify(weather, null, 2) %></pre>
+  </code>
+</div>

@@ -8,13 +8,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "install": "node scripts/install.js",
+    "start": "node server.js"
   },
   "dependencies": {
+    "chalk": "^5.4.1",
     "dotenv": "^17.0.1",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "googleapis": "^150.0.1",
+    "inquirer": "^12.7.0",
     "nodemon": "^3.1.10"
   }
 }

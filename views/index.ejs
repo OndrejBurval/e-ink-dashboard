@@ -12,13 +12,18 @@
   <!-- Components -->
   <link rel="stylesheet" href="/css/components/display.css">
   <link rel="stylesheet" href="/css/components/card.css">
+  <link rel="stylesheet" href="/css/components/preview.css">
+  <link rel="stylesheet" href="/css/components/badge.css">
 </head>
 <body>
     <div class="container">
       <div class="card">
         <%- include('../components/Display') %>
-        <%- include('../components/EventsDump') %>
-        <%- include('../components/WeatherDump') %>
+
+        <hr>
+
+        <%- include('../components/EventsPreview') %>
+        <%- include('../components/WeatherPreview') %>
       </div>
     </div>
 </body>

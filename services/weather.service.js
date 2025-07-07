@@ -76,10 +76,17 @@ class WeatherService {
 
       const data = await res.json();
 
-      return data;
+      return {
+        success: true,
+        data,
+      };
     } catch (error) {
       console.error("Weather service error:", error.message);
-      throw error;
+      return {
+        success: false,
+        data: null,
+        error: error.message,
+      };
     }
   }
 }

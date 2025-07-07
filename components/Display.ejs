@@ -1,6 +1,6 @@
 <div class="display-container">
   <div class="display-container-title">
-    <h2>Náhled displeje</h2>
+    <h2>Display preview</h2>
   </div>
 
   <div class="display">
@@ -24,7 +24,11 @@
     </ul>
 
     <span class="display-weather">
-      <%= weather.current?.temperature_2m || "-" %>&nbsp;<%= weather.current_units?.temperature_2m || "-" %>
+      <% if (weather.success) { %>
+        <%= weather.data.current.temperature_2m %>&nbsp;<%= weather.data.current_units.temperature_2m %>
+      <% } else { %>
+        <%= weather.error || "-" %>
+      <% } %>
     </span>
 
     <span class="display-timestamp">
