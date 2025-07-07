@@ -1,0 +1,26 @@
+<div class="preview">
+  <h2 class="preview__title">
+    <%- include('../components/StatusBadge', { active: !!screenshot }) %>
+    Screenshot Status
+  </h2>
+
+  <div class="preview__toggle">
+    <input checked type="checkbox" id="screenshot-toggle" />
+    <label for="screenshot-toggle">Show raw data</label>
+  </div>
+
+  <div class="preview__content">
+    <% if (screenshot) { %>
+      <p>Active screenshot:</p>
+      <img src="<%= screenshot %>" alt="Screenshot">
+    <% } else { %>
+      <p>No screenshot available</p>
+    <% } %>
+
+    <form action="/screenshot" method="post">
+      <button type="submit">
+        <%= !!screenshot ? 'Update screenshot' : 'Take screenshot' %>
+      </button>
+    </form>
+  </div>
+</div>

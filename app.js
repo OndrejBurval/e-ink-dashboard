@@ -1,7 +1,8 @@
 import express from 'express';
-import dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
+
+// Routes
 import pageRoutes from './routes/page.routes.js';
+import screenshotRoutes from './routes/screenshot.routes.js';
 
 const app = express();
 
@@ -14,5 +15,6 @@ app.use(express.static('public'));
 
 // Pages
 app.use('/', pageRoutes);
+app.use('/screenshot', screenshotRoutes);
 
 export default app;
