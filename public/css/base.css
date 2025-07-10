@@ -1,0 +1,34 @@
+:root {
+  --background-color: hsl(0, 0%, 93%);
+  --text-color: hsl(0, 0%, 10%);
+  --border-radius: 0.5rem;
+
+  --bg-success: hsl(144, 100%, 80%);
+  --bg-error: hsl(357, 96%, 85%);
+
+  --c-success: hsl(144, 100%, 30%);
+  --c-error: hsl(357, 96%, 30%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+hr {
+  margin-block: 3rem;
+  opacity: .25;
+}

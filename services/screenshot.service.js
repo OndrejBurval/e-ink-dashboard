@@ -9,11 +9,17 @@ class ScreenshotService {
 
   async initBrowser() {
     if (!this.browser) {
-      this.browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      });
-      this.page = await this.browser.newPage();
+
+      try {
+        this.browser = await puppeteer.launch({
+          headless: true,
+          args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        });
+        this.page = await this.browser.newPage();
+      } catch (error) {
+        console.error('Browser initialization error:', error.message);
+        throw error;
+      }
 
       //await this.page.setViewport();
     }

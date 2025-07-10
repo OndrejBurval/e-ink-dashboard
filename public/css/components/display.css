@@ -1,0 +1,60 @@
+.display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.display {
+  width: 250px;
+  height: 125px;
+  outline: 1px solid hsl(0, 0%, 75%);
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 .15rem .15rem hsl(0deg 0% 0% / 10%);
+  padding: .5rem;
+  font-size: .875rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr) max-content;
+  grid-template-areas:
+    "events events"
+    "events events"
+    "weather timestamp";
+
+  .display-title {
+    grid-area: title;
+  }
+
+  .display-events {
+    grid-area: events;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    .display-events__item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .display-events__item:not(:last-child) {
+      border-bottom: 1px solid hsl(0, 0%, 90%);
+      margin-bottom: .25rem;
+      padding-bottom: .25rem;
+    }
+
+    time {
+      opacity: 0.75;
+      font-size: .75rem;
+    }
+  }
+
+  .display-timestamp {
+    grid-area: timestamp;
+    place-self: end;
+    font-size: .625rem;
+    opacity: 0.5;
+  }
+}

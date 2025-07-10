@@ -1,0 +1,22 @@
+.badge {
+  --_bg: var(--background-color);
+  --_c: var(--text-color);
+
+  font-size: .75rem;
+  background-color: var(--_bg);
+  color: var(--_c);
+  padding: .25rem .5rem;
+  border-radius: .25rem;
+  display: inline-block;
+  border: 1px solid var(--_c);
+}
+
+.badge[data-active="true"] {
+  --_bg: var(--bg-success);
+  --_c: var(--c-success);
+}
+
+.badge[data-active="false"] {
+  --_bg: var(--bg-error);
+  --_c: var(--c-error);
+}
