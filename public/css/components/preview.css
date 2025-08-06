@@ -39,6 +39,10 @@
   display: none;
   margin-top: 1rem;
   grid-column: 1 / -1;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .preview:has(.preview__toggle input:checked) .preview__content {
