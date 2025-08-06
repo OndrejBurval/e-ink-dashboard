@@ -61,6 +61,7 @@ class ScreenshotService {
       await sharp(`./public/${SCREENSHOT_LOCATION}`)
         .greyscale()
         .threshold(128)
+        .resize({ width: 250, height: 122 })
         .toFormat("png")
         .toFile(`./public/${SCREENSHOT_LOCATION_OUTPUT}`, (err, info) => {
           if (err) throw err;

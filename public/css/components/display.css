@@ -7,13 +7,14 @@
 
 .display {
   width: 100%;
-  max-width: 900px;
+  max-width: 255px;
   aspect-ratio: 250 / 122;
   outline: 1px solid hsl(0, 0%, 75%);
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 .15rem .15rem hsl(0deg 0% 0% / 10%);
   padding: .5rem;
-  font-size: 3.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -40,6 +41,13 @@
       flex-direction: column;
     }
 
+    strong {
+      line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     .display-events__item:not(:last-child) {
       border-bottom: 1px solid hsl(0, 0%, 0%);
       margin-bottom: .25rem;
@@ -47,8 +55,8 @@
     }
 
     time {
-      font-size: 2rem;
-      font-weight: 600;
+      font-size: .875rem;
+      font-weight: 700;
 
     }
   }
@@ -56,11 +64,12 @@
   .display-timestamp {
     grid-area: timestamp;
     place-self: end;
-    font-size: 2rem;
+    font-size: .5rem;
   }
 
   .display-weather {
     grid-area: weather;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: .875rem;
   }
 }
