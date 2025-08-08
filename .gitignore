@@ -159,3 +159,11 @@ out/
 # Cache directories
 .cache/
 .parcel-cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+cli/python/.venv

@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer-core";
 import {
   SCREENSHOT_LOCATION,
-  SCREENSHOT_LOCATION_OUTPUT,
+  SCREENSHOT_LOCATION_OUTPUT
 } from "../utils/config.js";
 import chalk from "chalk";
 import sharp from "sharp";
@@ -80,6 +80,7 @@ class ScreenshotService {
       console.log(
         chalk.green(`✅ Screenshot saved: ${SCREENSHOT_LOCATION} (${date})`)
       );
+
       return { success: true };
     } catch (error) {
       console.timeEnd(TIMER_LABEL);
