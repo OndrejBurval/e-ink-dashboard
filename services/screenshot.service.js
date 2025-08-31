@@ -89,6 +89,21 @@ class ScreenshotService {
     }
   }
 
+  // Runs the full pipeline: capture -> convert (png already) -> python bmp + display
+  async runPipeline(runPythonDisplayFn) {
+    try {
+      const result = await this.takeScreenshot();
+      if (!result.success) {
+        return { success: false, step: 'screenshot', error: result.error };
+      }
+      // Conversion to PNG already happens in takeScreenshot; external Python handles BMP + display
+      await runPythonDisplayFn();
+      return { success: true };
+    } catch (error) {
+      return { success: false, step: 'python', error: error.message };
+    }
+  }
+
   async cleanup() {
     if (this.browser) {
       await this.browser.close();

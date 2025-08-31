@@ -1,0 +1,21 @@
+button {
+  all: unset;
+  cursor: pointer;
+  background-color: hsl(0deg, 0%, 97%);
+  color: var(--text-color);
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  border: 1px solid var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color .1s ease-in-out;
+
+  &:hover {
+    background-color: hsl(0deg, 0%, 93%);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+}

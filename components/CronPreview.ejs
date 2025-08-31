@@ -1,0 +1,27 @@
+<div class="preview">
+  <h2 class="preview__title">
+    <%- include('../components/StatusBadge', { active: cronStatus.running }) %>
+    Cron Status
+  </h2>
+
+  <div class="preview__toggle">
+    <input type="checkbox" id="cron-toggle" />
+    <label for="cron-toggle">Show config</label>
+  </div>
+
+  <div class="preview__content">
+    <p>
+      <strong>Schedule:</strong> <%= cronStatus.schedule %><br>
+      <strong>Running:</strong> <%= cronStatus.running %><br>
+      <strong>Last run:</strong> <%= cronStatus.lastRun || '-' %><br>
+      <strong>Last result:</strong> <%= cronStatus.lastResult ? (cronStatus.lastResult.success ? 'success' : ('error: ' + cronStatus.lastResult.error)) : '-' %>
+    </p>
+
+    <form action="/cron/start" method="post" style="display:inline-block;margin-right:8px;">
+      <button type="submit" <%= cronStatus.running ? 'disabled' : '' %>>Start cron</button>
+    </form>
+    <form action="/cron/stop" method="post" style="display:inline-block;">
+      <button type="submit" <%= !cronStatus.running ? 'disabled' : '' %>>Stop cron</button>
+    </form>
+  </div>
+</div>

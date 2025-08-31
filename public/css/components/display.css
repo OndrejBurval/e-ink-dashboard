@@ -13,16 +13,16 @@
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0 .15rem .15rem hsl(0deg 0% 0% / 10%);
   padding: .5rem;
-  font-size: 1rem;
+  font-size: .8125rem;
   font-weight: 500;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr max-content;
   grid-template-rows: repeat(2, 1fr) max-content;
   grid-template-areas:
-    "events events"
-    "events events"
-    "weather timestamp";
+    "events weather"
+    "events weather"
+    "events timestamp";
 
   .display-title {
     grid-area: title;
@@ -55,7 +55,7 @@
     }
 
     time {
-      font-size: .875rem;
+      font-size: .75rem;
       font-weight: 500;
 
     }
